@@ -17,11 +17,11 @@ RSpec.describe "/machines", type: :request do
   # Machine. As you add validations to Machine, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for :machine
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { :invalid => true }
   }
 
   # This should return the minimal set of values that should be in the headers
@@ -77,7 +77,7 @@ RSpec.describe "/machines", type: :request do
         post machines_url,
              params: { machine: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to eq("application/json")
+        expect(response.content_type).to match(/application\/json/)
       end
     end
   end
