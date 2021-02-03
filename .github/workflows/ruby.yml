@@ -34,6 +34,6 @@ jobs:
     - name: Prepare dependencies
       env:
         RAILS_ENV: test
-      run: rails db:drop db:create db:migrate
+      run: bundle exec rails db:drop db:create db:migrate
     - name: Run tests
-      run: rspec
+      run: bundle exec rspec
