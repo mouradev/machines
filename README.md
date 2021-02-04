@@ -2,6 +2,6 @@
 
 ### Machines
 
-This project is for learning proposes.
+This project is for learning purposes.
 
 [...]
